@@ -1,0 +1,21 @@
+thead {
+  background-color: rgba(32,30,63,0.9);
+  color: #fff;
+}
+
+h5.service-alias, p {
+	margin: 10px 0;
+}
+
+h1 {
+	padding: 20px 0;
+}
+
+.service-alias a {
+	text-decoration: none;
+	color: #000;
+}
+
+.service-alias a:hover {
+	color: #38346E;
+}

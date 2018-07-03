@@ -1,0 +1,32 @@
+{{#each services as |service|}}
+	<tr>
+		<td>
+			<h5 class="service-alias">
+				<a href="https://updown.io/{{service.token}}">{{service.alias}}</a>
+			</h5>
+			{{#if (eq service.token 'hs1x')}}
+				<p>push messages/device pings</p>
+			{{else if (eq service.token 'm06d')}}
+				<p>log-in system</p>
+			{{else if (eq service.token 'ccvy')}}
+				<p>backend and order processing</p>
+			{{else if (eq service.token 'fgbi')}}
+				<p>workflows</p>
+			{{else if (eq service.token 'c1xk')}}
+				<p>Statistics and error reporting</p>
+			{{else}}
+					
+			{{/if}}
+		</td>
+		<td>
+			{{#if service.down}}
+				<p>Down since {{moment-format service.down_since 'YYYY-MM-DD HH:mm:ss' 'YYYY/MM/DDTHH:mm:ssZ'}}</p>
+			{{else}}
+			 	<p>Up</p>
+			{{/if}}
+		</td>
+		<td>
+			<p>{{format-number service.uptime format="0.00"}}%</p>
+		</td>
+	</tr>
+{{/each}}
